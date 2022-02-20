@@ -1,0 +1,339 @@
+@charset "UTF-8";
+
+html
+{
+	height: auto;
+	background-color: rgba(177, 162, 206, 0.432);
+    }
+body
+{
+    margin: 0px;
+    height: 100%;
+}
+div
+{
+    display: flex;
+    /* 센터정렬 */
+    /* align-items:center; justify-content:center; */
+    /* border: 1px solid black; */
+}
+.mainview
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* border: 1px solid black; */
+    display: block;
+    margin:0px;
+}
+#topbar
+{
+    width: 100%;
+    height:50px;
+    /* border:1px solid black; */
+    display: flex;
+    background-color: rgb(158, 158, 196);
+    position:fixed;
+    top:0px;
+    z-index:20;
+}
+#s_form{
+	width: 100% ; height: 100%;  
+	display: inline-block; 
+	text-align: center;
+}
+#searchbtn
+{
+	width:100px; height:40px;
+}
+.con1
+{
+    margin: 110px auto;
+    display: block;
+    width: 90%; 
+    height: auto;
+    position: relative;   
+    
+}
+.con2
+{
+    margin: 0px auto; 
+    width: 80%; 
+    height: auto;
+    flex-wrap: wrap;
+    /* background-color: rgb(158, 158, 196); */
+    align-items:center; justify-content:center;
+    /* border: 1px solid gray; */
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}
+.r_m
+{
+    margin: 20px auto;
+    margin-bottom: 20px;
+    width: 240px; height: 370px;
+    display:flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    border-radius : 0 0 1em 1em ;
+}
+.r_m img{
+	 width: 240px; height: 312px;
+}
+
+.tool
+{
+    display: flex;
+    align-items:center; justify-content: space-between;
+    height: 30px; width: 100%; margin: 0px auto; margin-bottom: 0px;
+    background-color: rgb(158, 158, 196);
+}    
+.but
+{
+   /*  border: 1px solid black; */
+    height: 14%;
+    width: 100%;
+    align-items:center; justify-content: center;
+                
+}
+.m_c
+{
+    margin: 10px 10px;
+    margin-bottom: 40px;
+    width: 180px; height:240px;
+    align-items:center; justify-content:space-around;
+    /* border: 1px solid black; */
+}
+footer
+{
+    width: 100%; height: 100px; 
+    background-color: blue;
+}
+.title{
+     width: 85%;
+    height: auto;
+    margin: 40px auto;
+    display: block;
+}
+.movie{
+    width: 80%;
+    height: auto;
+    margin: 110px auto;
+    margin-bottom:20px;
+    flex-wrap: wrap;
+    align-items:center; justify-content:center;
+    /* background-color: cadetblue; */
+}
+.m_c2
+{
+    margin: 0px 20px 28px 20px;
+    width: 250px; height:370px;
+    border: 1px solid black;
+    display:flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    border-radius : 0 0 1em 1em ;
+}          
+.m_c2 img{
+	 width: 250px; height:325px;
+	 
+	 
+}
+.m_c2 h3{
+	width: 250px; height:50px;
+}
+.m_c2 img {
+	  transition: all 0.2s linear;
+	}
+.m_c2:hover  {
+  transform: scale(1.05);
+}
+
+
+
+.m_show img{
+	width:500px;
+	height:700px;
+	
+}
+
+.a12{
+    display:inline-block;
+}
+.a12{
+    margin-left:20px;
+}
+/* 로그인창 style */
+.log_main {
+    width: 400px;
+    height: 500px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 100px auto;
+    background-color: rgb(177, 96, 96);
+    padding-top: 200px;
+}
+.account {
+    display: block;
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    padding: 0px;
+   /*  border: 1px solid lightgray; */
+    border-radius: 3px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* 회원가입 창 style */
+.sign_main {
+    width: 800px;
+    height: 600px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+   /*  border: 1px solid black; */
+    border-radius: 5px;
+    margin: 100px auto;
+    background-color: rgb(177, 96, 96);
+    padding-top: 60px;
+}
+
+.account2{
+    display: block;
+    width: 400px;
+    height: 40px;
+    margin-bottom: 13px;
+    padding: 0px;
+    /* border: 1px solid lightgray; */
+    border-radius: 8px;
+    marign-left:10px;
+}
+.container2{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+.lab2{
+    display: flex;
+    flex-direction: row;
+    margin: 0px auto;
+    margin-left:200px;
+    width:600px;
+}
+.container2 p{
+    display:inline-block;
+    margin-left:200px;
+    margin-bottom:3px;
+}
+#signbt{
+    width:400px; height : 40px;
+    margin-left:200px;
+    border-radius: 15px;
+}
+    
+/* ------------------mypage_css----------------------- */
+.mymenu{
+	all: unset;
+    width:15%;
+	height:800px;
+    margin:0px;
+    padding-top:50px;
+    padding-left : 20px;
+    background-color: rgb(185, 185, 224);
+	position: fixed;
+	display: inline-block;
+	top:50px;
+}
+.mymemu_2{
+	all: unset;
+	width:81%;
+	height:800px;
+	padding-top:150px;
+	position:absolute;
+	top:50px;
+	left:17%;
+	display: inline-block;	
+}
+.m_table{
+	display: inline-block; 
+	width: 300px;
+	/* border: 1px solid black; */
+}
+td{
+   	/* border-top: 1px solid black; */
+} 
+.change_table{
+	margin : 30px auto;
+}
+.change_table tr td , .change{
+	width: 300px;
+	height: 30px;
+	font-size : 25px
+}
+.c_btn{
+	width:100px;
+	height: 38px;
+}
+.change_table{
+	margin : 30px auto;
+}
+.change_table tr td , .change{
+	width: 300px;
+	height: 30px;
+	font-size : 25px
+}
+.c_btn{
+	width:200px;
+	height: 40px;
+	margin-top:10px;
+}
+/* -----------------페이징 부분=========================== */
+#paging {
+   text-align: center;
+   border: 1px solid #ccc;
+   border-right: 0;
+   width: 100%;
+   float: left;
+   display: flex;
+	justify-content: center;
+}
+#paging li {
+    text-align: center; 
+}
+#paging li a {
+    display: block;
+    font-size:18px;
+    padding: 5px 20px;
+    border-right: solid 1px #ccc;
+    box-sizing: border-box;
+}
+
+#paging li.on {
+    background: #eda712;
+}
+
+#paging li.on a {
+    color: #fff;
+}       	    
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
