@@ -105,17 +105,11 @@
         else
 		{%> 
 		<jsp:include page="/movie/topmenu_login.jsp" />
-	 	<%} %> 
+	 	<%}%> 
         <!-- 로고랑 topmenu 끝 -->
 	<%
 		String m_id = request.getParameter("m_id");
 		System.out.println("m_id의값은" +m_id);
-		String insert_check="";
-		if(session.getAttribute("check2")!=null)
-		{
-			insert_check = (String)session.getAttribute("check2");
-			System.out.println(insert_check);
-		}
 	%>
 	
 	
@@ -133,20 +127,14 @@
 						<h2>평가점수 :</h2>
 					</div>
 					<div id ="fav_2" style =" text-align: center; ">
-					<%if(session.getAttribute("vo")!=null) 
+					<%
+					if(session.getAttribute("vo")!=null) 
 					{
-						if(session.getAttribute("check2")!=null)
-						{	System.out.println("if문 진입함");
-						%>
-						<a href= "#" id="fav_a2" class ="fav_btn"><h3>관심</h3><img id="fav_img" src = "/movie/img/checkmark-circle-outline.svg"></a>
-						<%
-						}
-						else
-						{System.out.println("else문 진입함");
-						%>
-							<a href= "javascript:fav_insert()" id="fav_a" class ="fav_btn"><h3>관심</h3><img id="fav_img" src = "/movie/img/checkmark-outline.svg"></a>
-						<%}
-					}%>
+					%>
+						<a href= "javascript:fav_insert()" id="fav_a" class ="fav_btn"><h3>관심</h3><img id="fav_img" src = "/movie/img/checkmark-outline.svg"></a>
+					<%
+					}
+					%>
 					</div>
 				</div>
 				<h1>스토리</h1>
@@ -158,7 +146,6 @@
 		</div>
 		<!-- 영화 트레일러 공간 -->
 		<h1 style="margin-left:100px; margin-bottom : 50px;">예고편</h1>		
-		
 			<p align="middle"><iframe id="t_iframe" style="width: 1300px; height: 700px;"></iframe></p>
 		
 		<!-- 관심영화 등록하기 위한 폼 -->
@@ -191,10 +178,7 @@
 	showtrailer(m_id);
 	
 	
-	function reload()// 새로고침함수
-	{
-		$('#fav_a2').load(window.location.href + '#fav_a2');
-	}
+	
 	function s_id(id)//영화 검색을 위해 id값을 받아 imdb값을 구하는 함수
 	{
 		const i_url = id_url+id+id_key;
@@ -205,11 +189,33 @@
 			success:function(s_data) 
 			{
 				const imdbid = s_data.imdb_id;
-				fav_check(m_id);
 				showmovie(imdbid);
+				fav_check(m_id);
 			}
 		});
 	}
+	
+	function fav_check(m_id)//관심영화 저장 중복 확인
+	{
+		$.ajax({
+		    url: "/moviefav_check.do",
+		    type: "GET",     
+		    data: { "movieid":m_id},
+			success:function(s_data) 
+			{
+				if(s_data=='find'){
+					
+					$('#fav_img').attr("src", "/movie/img/checkmark-circle-outline.svg");
+					<a href= "#" id="fav_a2" class ="fav_btn"><h3>관심</h3><img id="fav_img" src = "/movie/img/checkmark-circle-outline.svg"></a>
+					$('#fav_a2').attr("href", "#");
+				}
+					
+			}
+		});	
+
+	}
+
+	
 	function showmovie(imdbid)//imdb값을 받아 원하는 영화 검색하게 하는 함수
 	{
 		const s_url = "https://api.themoviedb.org/3/find/";
@@ -255,7 +261,8 @@
 				$('.m_title').append(m_title);
 				$('#mdate').append(m_date);
 				$('#mrated').append(m_rated);
-				$('.m_overview').append(m_overview); 
+				$('.m_overview').append(m_overview);
+				
 			}
 		});
 	}
@@ -288,24 +295,18 @@
 		    data: { "movieid":m_id, "title": title , "poster" : poster},
 			success:function(s_data) 
 			{	
+				if(s_data=='find'){
+					alert("TEST");
+					$('#fav_img').attr("src", "/movie/img/checkmark-circle-outline.svg");
+				
+				}
+
+				
 			}
 		});	
 		
 	}
 	
-	function fav_check(m_id)//관심영화 저장 중복 확인
-	{
-		$.ajax({
-		    url: "/moviefav_check.do",
-		    type: "GET",     
-		    data: { "movieid":m_id},
-			success:function(s_data) 
-			{
-				
-			}
-		});	
-
-	}
 </script>
 
 </body>

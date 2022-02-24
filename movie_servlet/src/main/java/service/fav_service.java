@@ -32,6 +32,23 @@ public class fav_service {
 		return dao.check(userid,movieid);
 		
 	}
+
+	public void delete(String userid, String movieid) {
+		dao.delete(userid,movieid);
+		
+	}
+
+	public int getTotalCount(String user_id) {
+		System.out.println("getTotalCount service 진입");
+		return dao.getTotalCount(user_id);
+	}
+
+	public Vector<favVO> getList(int start, int end, String user_id) {
+		System.out.println("getList service 진입");
+		return dao.getlist(start,end,user_id);
+	}
+
+	
 	
 
 	

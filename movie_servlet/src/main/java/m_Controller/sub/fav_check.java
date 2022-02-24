@@ -1,5 +1,7 @@
 package m_Controller.sub;
 
+import java.io.IOException;
+
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -23,7 +25,8 @@ public class fav_check implements Controller{
 			HttpUtil.Forward(req,resp,"/movie/item.jsp");
 			
 		}
-		else{
+		else
+		{
 			System.out.println("로그인");
 			String userid = vo.getId();
 			String movieid = (String) req.getParameter("movieid");
@@ -33,11 +36,16 @@ public class fav_check implements Controller{
 			if(num==1)
 			{
 				check2="find";
+				try {
+					resp.getWriter().print(check2);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
-			session.setAttribute("check2" , check2);
-			
-			//HttpUtil.Forward(req,resp,"/movie/item.jsp");
 		}
+				
 		
 	}
 

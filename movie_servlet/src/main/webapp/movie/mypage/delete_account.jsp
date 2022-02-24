@@ -44,7 +44,7 @@
 				
 			}
 		</style>
-		<div class="mymemu_2" style =" text-align: center;">
+		<div class="mymenu_2" style =" text-align: center;">
 			<h1>회원 탈퇴</h1>
 			<form class = "d_form" method="post" action="/movieDelete.do">
 				<h2 style="margin-bottom:20px;">회원 탈퇴 하시겠습니까</h2>

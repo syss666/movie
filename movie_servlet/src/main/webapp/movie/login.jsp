@@ -28,7 +28,7 @@
             <div class="container">
                 <input type="text" placeholder=" ID" name="id" id="id" class="account" required  >
                 <input type="password" placeholder="    Password" name="pw" id="password" class="account" required >
-                <button id = "sign" class="account" >login</button>
+                <button id = "sign" class="account btn_group" >login</button>
             </div>
             <br>
             <h4>혹시 회원이 아니신가요? <br> <a href="/movie/signup.jsp">이곳</a>을 눌러 회원가입을 해주세요</h4>

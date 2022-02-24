@@ -49,8 +49,8 @@
     </div>
     <div id="tb2" style="align-items:center; justify-content:center; width: 75%; height: 50px;">
 		        <form  id = "s_form" method="get" action="/movie/searchpage.jsp" >
-		        <input type="text" name="m_name" style="margin:5px 5px; width:80%; height: 70%;">
-		        <input type="submit" value ="Search" id="searchbtn">
+		        <input type="text" name="m_name" style="margin:5px 5px; width:80%; height: 70%; border-radius : 0.5em 0.5em 0.5em 0.5em ;">
+		        <input type="submit" value ="Search" id="searchbtn" class = "btn_group">
 		    	</form>
 		    </div>
     <div id="tb3" style=" float: right; width:15%; height: 50px; align-items:center; justify-content:center;">
@@ -59,7 +59,7 @@
 				<li class="c_1"><a href="#" id="mypage"><%=id +"님"%></a>
                 	<ul class="c_2">
                 		<li><a href="/movie/mypage/mydata.jsp" >개인 정보 수정</a></li>
-                		<li><a href="/movie/mypage/fav.jsp" >찜목록</a></li>
+                		<li><a href="/moviefav_list.do" >찜목록</a></li>
                 		<li><a href="/movie/mypage/report_errors.jsp" >버그 및 오류 신고</a></li>
                 		<li><a href="/movie/mypage/delete_account.jsp" >회원 탈퇴</a></li>
                 	</ul>

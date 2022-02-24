@@ -1,5 +1,7 @@
 package m_Controller.sub;
 
+import java.io.IOException;
+
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -38,8 +40,14 @@ public class fav_insert implements Controller{
 			
 			service.insert(fvo);
 			
+			try {
+				resp.getWriter().print("find");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
-			HttpUtil.Forward(req,resp,"/movie/item.jsp");
+			
 		}
 		
 		

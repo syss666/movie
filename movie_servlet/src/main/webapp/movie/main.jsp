@@ -38,14 +38,20 @@
             <div id="popular_movie2" class="con2">
                 <div class="tool">
                     <p style="margin-left: 30px;"><영화></p>
-                    <%if(session.getAttribute("vo")!=null){ %>
-                    	<label><input type ="button" id = "1" class="m_btn" onclick="golist(this.id)">더보기</label>
-                    <%} %>
+                    <label><input type ="button" id = "1" class="m_btn" onclick="golist(this.id)">더보기</label>
                 </div>
              
             </div>
         </div>
         <!-- 영화 추천 창  끝 -->
+        <style>
+        	.m_btn{
+        		opacity:0;
+        	}
+        	.tool label{
+        		padding-right: 10px;
+        	}
+        </style>
         <!-- 상영예정영화 컨텐츠 창 시작-->
         <div id="upcoming_list" class="con1">  
             <div id="upcoming_list2" class="con2">

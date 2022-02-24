@@ -10,9 +10,7 @@
 	<ul class="mymenu">
 			<li><a href="/movie/mypage/mydata.jsp" >개인 정보 확인 및 수정</a></li>
 			<br>
-			<li><a href="/movie/mypage/fav.jsp" >관심 목록</a></li>
-			<br>
-			<li><a href="/movie/mypage/board.jsp" >영화 질문 게시판</a></li>
+			<li><a href="/moviefav_list.do" >관심 목록</a></li>
 			<br>
 			<li><a href="/movie/mypage/report_errors.jsp" >버그 및 오류 신고</a></li>
 			<br>

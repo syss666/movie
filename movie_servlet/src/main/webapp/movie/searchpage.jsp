@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
  <%@include file="/movie/link.jsp" %>
@@ -27,6 +28,7 @@
 	
     <%
     	String movie_name = request.getParameter("m_name");
+    	System.out.println(movie_name);
     %>
     <script>var movie_name = "<%=movie_name%>";</script>
 
@@ -60,18 +62,18 @@
 	{
 		const null_search = document.createElement("div");
 		null_search.classList.add("null_con");
-
 		null_search.innerHTML =  "<h2>검색할 영화명을 입력하여 주십시오.</h2>";		      
          $('.movie').append(null_search);
 	}
-	function getmovie(url){
+	function getmovie(url)
+	{
 		$.ajax({
 		    url: url, 
 		    type: "GET",                             
 		    dataType: "json" ,
 			success:function(m_data) 
 			{
-				eachmovie(m_data.results);	
+				eachmovie(m_data.results);
 			}
 		});
 	}
@@ -90,8 +92,8 @@
 		    });
 		
 	}
-	$(document).on('click', '.m_c2', function(){
-		 
+	$(document).on('click', '.m_c2', function()
+	{
 		const m_id = $(this).children().attr('alt');
 		var form = document.m_fo;
 		document.getElementById("m").value = m_id;

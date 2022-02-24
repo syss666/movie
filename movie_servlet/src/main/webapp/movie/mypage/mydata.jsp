@@ -23,7 +23,7 @@
 <%
 	movieVO vo= (movieVO)session.getAttribute("vo");
 %>
-		<div class="mymemu_2">
+		<div class="mymenu_2">
 			<h1 style="text-align: center;">나의 개인 정보 </h1>
 			<table class = "change_table">
 				

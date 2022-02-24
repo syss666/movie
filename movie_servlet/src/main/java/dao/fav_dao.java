@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -82,7 +83,7 @@ public class fav_dao {
 		try {
 			System.out.println("check함수 진입");
 			conn = ds.getConnection();
-			pstmt=conn.prepareStatement("select count(*) from fav_tbl where user_id=? AND  m_id=?;");
+			pstmt=conn.prepareStatement("select count(*) from fav_tbl where user_id=? AND  m_id=?");
 			pstmt.setString(1, userid);
 			pstmt.setString(2, movieid);
 			rs = pstmt.executeQuery();
@@ -105,5 +106,101 @@ public class fav_dao {
 
 		return check;
 	}
+	public void delete(String userid, String movieid) {
+		try {
+			System.out.println("삭제진입");
+			conn=ds.getConnection();
+			pstmt = conn.prepareStatement("delete from fav_tbl where user_id=? AND m_id=?");
+			pstmt.setString(1, userid);
+			pstmt.setString(2,movieid);
+			pstmt.executeUpdate();
+			System.out.println("삭제완료");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			try {pstmt.close();}catch(Exception e) {}
+			try {conn.close();}catch(Exception e) {}
+		}
 
+	}
+	
+	public int getTotalCount(String user_id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs=null;
+		System.out.println("dao_getTotalCount 진입");
+		int cnt=0;
+		try {
+			conn=ds.getConnection();
+			pstmt=conn.prepareStatement("select count(*) from fav_tbl where user_id = ?");
+			pstmt.setString(1,user_id);
+			rs = pstmt.executeQuery();
+			
+			if(rs!=null) {
+				while(rs.next()) {
+					cnt=rs.getInt(1);
+				}	
+			}	
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try{rs.close();}catch(Exception e) {}
+			try{pstmt.close();}catch(Exception e) {}
+			try{conn.close();}catch(Exception e) {}	
+		}
+		return cnt;
+	}
+	public Vector<favVO> getlist(int start, int end, String user_id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs=null;
+		System.out.println("dao_getlist 진입");
+		Vector<favVO> list = new Vector();
+		try {
+			conn=ds.getConnection();
+			pstmt=conn.prepareStatement("select * from fav_tbl  where user_id = ? order by m_id desc limit ?,?;");
+			pstmt.setString(1, user_id);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			rs = pstmt.executeQuery();
+			
+			if(rs!=null) {
+				while(rs.next()) {
+					//읽어온 테이블 각행의 값을 BoardVO로 저장
+					favVO fvo = new favVO(
+						rs.getString("user_id"),
+						rs.getString("m_id"),
+						rs.getString("m_title"),
+						rs.getString("m_poster")
+					);
+					//리스트에 넣기
+					list.add(fvo);
+				}	
+			}	
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try{rs.close();}catch(Exception e) {}
+			try{pstmt.close();}catch(Exception e) {}
+			try{conn.close();}catch(Exception e) {}	
+		}
+		
+		return list;
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

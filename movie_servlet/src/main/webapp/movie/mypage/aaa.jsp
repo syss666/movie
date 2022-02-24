@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href= "javascript:fav_insert()" id="fav_a" class ="fav_btn"><h3>관심</h3><img id="fav_img" src = "/movie/img/checkmark-outline.svg"></a>
+
+	
+	
+	<h1>aaaa</h1>
 </body>
 </html>

@@ -24,7 +24,7 @@
                 <p>이름</p> <label class="lab2"><input type"text" placeholder="  이름 입력" name="name" class="account2" required></label>
                 <p>이메일</p> <label class="lab2"><input type"email" placeholder="  이메일 입력" name="email" class="account2" required></label>
                 <p>핸드폰번호</p><label class="lab2"><input type"text" placeholder=" ex)010-xxxx-xxxx" name="phone" class="account2" required></label>
-            	<button id="signbt" >회원가입</button>
+            	<button id="signbt" class="btn_group">회원가입</button>
             </form>
         </div>   
         

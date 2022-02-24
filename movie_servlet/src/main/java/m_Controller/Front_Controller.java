@@ -11,7 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import m_Controller.sub.delete;
 import m_Controller.sub.fav_check;
+import m_Controller.sub.fav_delete;
 import m_Controller.sub.fav_insert;
+import m_Controller.sub.fav_list;
 import m_Controller.sub.idcheck;
 import m_Controller.sub.insert;
 import m_Controller.sub.login;
@@ -44,7 +46,8 @@ public class Front_Controller extends HttpServlet{
 		//관심목록함수
 		list.put("/moviefav_in.do", new fav_insert());
 		list.put("/moviefav_check.do", new fav_check());
-		
+		list.put("/moviefav_delete.do", new fav_delete());
+		list.put("/moviefav_list.do", new fav_list());
 	}
 	
 	

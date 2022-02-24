@@ -24,7 +24,7 @@
 			movieVO vo= (movieVO)session.getAttribute("vo");
 			String id = vo.getId();
 		%>
-		<div class="mymemu_2">
+		<div class="mymenu_2">
 			<h1 style="text-align: center;">개인 정보 수정 </h1>
 			<form  method="post" action= "/movieUpdate.do?id= <%=id %>" class="change_from" >
 				<table class = "change_table">
