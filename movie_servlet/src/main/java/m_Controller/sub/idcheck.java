@@ -1,5 +1,7 @@
 package m_Controller.sub;
 
+import java.io.IOException;
+
 import com.mysql.cj.x.protobuf.MysqlxPrepare.Execute;
 
 import jakarta.servlet.annotation.WebServlet;
@@ -19,9 +21,13 @@ public class idcheck implements Controller{
 		movie_service service = movie_service.getInstance();
 		int check = service.idcheck(id);
 		HttpSession session = req.getSession();
-		session.setAttribute("check",check);
 		
-		
+		try {
+			resp.getWriter().print(check);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

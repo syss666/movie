@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
+
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') foat('woff');
+    font-family: 'MinSans-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,7 +11,7 @@ html
 {
 	height: auto;
 	background-color: rgba(177, 162, 206, 0.432);
-	font-family: 'GmarketSansMedium';
+	font-family: 'MinSans-Medium';
     }
 body
 {
@@ -187,13 +188,14 @@ footer
 .log_main {
     width: 400px;
     height: 500px;
+    display : flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     border: 1px solid black;
     border-radius: 5px;
     margin: 100px auto;
-    background-color: rgb(177, 96, 96);
+    background-color: rgb(158, 158, 196);
     padding-top: 200px;
 }
 .account {
@@ -218,9 +220,9 @@ footer
     align-items: center;
     flex-direction: column;
    /*  border: 1px solid black; */
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 100px auto;
-    background-color: rgb(177, 96, 96);
+    background-color: rgb(158, 158, 196);
     padding-top: 60px;
 }
 
