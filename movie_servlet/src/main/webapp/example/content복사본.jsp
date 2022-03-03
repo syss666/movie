@@ -5,6 +5,8 @@
 <head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -35,39 +37,56 @@
         	<input type="hidden" id="l" name = "list2" value="">
          	<input type="hidden" id="p" name="num" value="">
         	<input type="hidden" id= "b" name = "block_page" value= "">
-    		<input type="hidden" id= "t" name = "total_pages" value= "">
     	</form>
 		<%
 			String list3 = (String)request.getParameter("list2");
-			String number="";
-			
-			int block_number=0;
-			int page_start=1;
-			int page_end=11;
+			String number= (String)request.getParameter("num");
 			int now_block=0;
-			int total_pages=0;
+		
 			
 			if(request.getParameter("null_check")!=null)
-			{	
-				total_pages=Integer.parseInt(request.getParameter("total_pages"));
+			{
 				now_block =Integer.parseInt(request.getParameter("block_page"));
 				number= (String)request.getParameter("num");	
-				
-				if((now_block+1)*10<total_pages)
-				{
-					block_number=now_block*10;
-					page_start=block_number+1;
-					page_end = block_number+11;
-				}
-				else
-				{
-					block_number=now_block*10;
-					page_start=block_number+1;
-					page_end = total_pages+1;
-				}
 			}
 			
+			int block_number=now_block*10;
+			
 		%>
+		<style>
+			.movie{
+				overflow: hidden;
+			}
+			.m_c2_title{
+				width: 100%;
+			}
+			.overview {
+			   	padding:0px;
+			    position: absolute;
+			    max-height: 60%;
+			    overflow: auto;
+			    background-color: black;
+			     background-color: rgba( 255, 255, 255, 0.7 );
+			    flex-direction: column;
+ 			    width : 250px;
+			    left: 0;
+			    bottom: 0;
+			    right: 0; 
+			    display:flex;
+			    transform: translateY(110%);
+			    transition: transform 0.3s ease-in; 
+				color:black;
+			}
+			.overview div{
+				width: 100%;
+				display: block;
+			}
+			.m_c2:hover .overview 
+			{
+			    transform: translateY(0);
+			    top:100px;
+			}
+		</style>
         <div id="t_movie" class="title">
        
             <div class="movie">
@@ -82,7 +101,7 @@
 				<ul id = "paging">
 					<li class ="p_btn"><a href ="javascript:move_block('<%=now_block-1 %>')">이전</a></li>
 					<%
-					for(int i=page_start ; i<page_end; i++)
+					for(int i=1+block_number ; i<11+block_number; i++)
 					{%>
 						<li class ="p_btn"><a href ="javascript:paging('<%=i%>')"><%=i %></a></li>	
 					<%
@@ -110,6 +129,7 @@
 	const NOWURL ="https://api.themoviedb.org/3/movie/now_playing?api_key=d33ccc9950f589a6d0b4d5c2f8f63e31&language=ko&page="+pagnumber;
 	/* 높은 평점영화 */
 	const TOPURL ="https://api.themoviedb.org/3/movie/top_rated?api_key=d33ccc9950f589a6d0b4d5c2f8f63e31&language=ko&page="+pagnumber;
+
 	const APIURL ="https://api.themoviedb.org/3/movie/popular?api_key=d33ccc9950f589a6d0b4d5c2f8f63e31&language=ko&page="+pagnumber;
 	const IMGPATH = 'https://image.tmdb.org/t/p/w185';
 	const SEARCHAPI ="https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
@@ -140,10 +160,7 @@
 		    type: "GET",                             
 		    dataType: "json" ,
 			success:function(m_data) 
-			{	
-				let total_page=m_data.total_pages;
-				document.getElementById("t").value = total_page;
-				console.log(m_data);
+			{
 				eachmovie(m_data.results);		
 			}
 		});
@@ -153,11 +170,11 @@
 		 movies.forEach((movie) => {
 			 const movieEl = document.createElement("div");
 		        movieEl.classList.add("m_c2");
-		       	console.log(movie.indexof);
 		        tmp =  IMGPATH +movie.poster_path;
 		        title = movie.title;
+		        overview = movie.overview;
 		        id=movie.id
-		        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <h3>"+title+"</h3>";		      
+		        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <div class = 'm_c2_title'> <h3>"+title+"</h3></div> <div class='overview'><h4>"+title+"</h4>"+overview+"</div>";		      
 		         $('.movie').append(movieEl);
 		    });	
 	}	
@@ -179,9 +196,7 @@
 	function move_block(b_num)
 	{
 		var form = document.p_form;
-		let maxpage=document.getElementById("t").value 
-		console.log(maxpage);
-		if(b_num>-1 && b_num<maxpage)
+		if(b_num>-1 && b_num<50)
 		{
 			document.getElementById("n_c").value = "a";
 			document.getElementById("l").value = "<%=list3%>";
@@ -190,6 +205,7 @@
 			form.submit();
 		}
 	}
+
 </script>
         <!-- 영화 컨텐츠 창 끝 -->
         <!-- footer -->

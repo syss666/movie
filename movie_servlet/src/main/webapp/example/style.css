@@ -102,6 +102,7 @@ main {
 
 .overview h3 {
     margin-top: 0;
+    text-overflow: clip;
 }
 
 .movie:hover .overview {

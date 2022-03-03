@@ -7,16 +7,23 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'SANJUGotgam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/SANJUGotgam.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html
 {
 	height: auto;
 	background-color: rgba(177, 162, 206, 0.432);
-	font-family: 'MinSans-Medium';
-    }
+}
 body
 {
     margin: 0px;
     height: 100%;
+    font-family: 'MinSans-Medium';
 }
 div
 {
@@ -63,9 +70,7 @@ div
     width: 90%; 
     height: auto;
     position: relative; 
-    margin-bottom:30px;
- 
-    
+    margin-bottom:30px; 
 }
 .con2
 {
@@ -73,9 +78,8 @@ div
     width: 80%; 
     height: auto;
     flex-wrap: wrap;
-    /* background-color: rgb(158, 158, 196); */
     align-items:center; justify-content:center;
-    /* border: 1px solid gray; */
+    margin-bottom: 10px;
 }
 a
 {
@@ -86,26 +90,41 @@ a
 {
     margin: 20px auto;
     margin-bottom: 0px;
-    width: 240px; height: 370px;
+    width: 240px; height: 345px;
     display:flex;
     flex-direction: column;
-    color: black;
+    background-color:black;
+    color: white;
     border-radius : 0 0 1em 1em ;
 }
 .r_m img{
 	 width: 240px; height: 312px;
 }
 .r_m h3 {
-	margin-top:0px;
+	margin:1px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow : ellipsis;
 }
 .tool
 {
     display: flex;
     align-items:center; justify-content: space-between;
-    height: 30px; width: 100%; margin: 0px auto; margin-bottom: 0px;
+    height: 30px; width: 85%; 
+    margin: 0px auto; 
+    margin-bottom: 15px;
     background-color: rgb(158, 158, 196);
     border-radius : 0.5em 0.5em 0.5em 0.5em ;
-}    
+    padding:0px 20px 0px 20px;
+    font-size: 20px;
+}
+.m_btn{
+	opacity:0;
+}
+
+.tool label{
+	padding-right: 10px;
+}
 .but
 {
    /*  border: 1px solid black; */
@@ -114,21 +133,14 @@ a
     align-items:center; justify-content: center;
                 
 }
-.m_c
-{
-    margin: 10px 10px;
-    margin-bottom: 40px;
-    width: 180px; height:240px;
-    align-items:center; justify-content:space-around;
-    /* border: 1px solid black; */
-}
+
 footer
 {
     width: 100%; height: 100px; 
     background-color: blue;
 }
 .title{
-     width: 85%;
+    width: 85%;
     height: auto;
     margin: 40px auto;
     display: block;
@@ -140,44 +152,60 @@ footer
     margin-bottom:20px;
     flex-wrap: wrap;
     align-items:center; justify-content:center;
-    /* background-color: cadetblue; */
+    overflow: hidden;
 }
 .m_c2
 {
-    margin: 0px 20px 28px 20px;
-    width: 250px; height:370px;
+    margin: 0px 20px 18px 30px;
+    width: 250px; height:360px;
     display:flex;
+    position:relative;
     flex-direction: column;
-    color: black;
+    background-color:black;
+    color: white;
     border-radius : 0 0 1em 1em ;
 }          
 .m_c2 img{
-	 width: 250px; height:325px;
-	 
-	 
+	 width: 250px; height:325px; 
 }
 .m_c2 h3{
 	width: 250px; height:50px;
-	margin-top:1px;
+	margin:1px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow : ellipsis;
 }
-.m_c2 img {
-	  transition: all 0.2s linear;
-	}
-.m_c2:hover  {
-  transform: scale(1.05);
+.overview {
+   	padding:0px;
+    position: absolute;
+    max-height: 60%;
+    overflow: auto;
+     background-color: rgba( 255, 255, 255, 0.7 );
+    flex-direction: column;
+	width : 250px;
+    left: 0;
+    bottom:0;
+    right: 0;
+    display:flex;
+    display:none;
+    transform: translateY(110%);
+    transition: transform 0.3s ease-in; 
+	color:black;
+}
+
+.m_c2:hover .overview 
+{
+	display:flex;
+    transform: translateY(0);
+    top:100px;
 }
 .r_m:hover  {
   transform: scale(1.05);
 }
-
-
-
 .m_show img{
 	width:500px;
 	height:700px;
-	
 }
-
 .a12{
     display:inline-block;
 }
@@ -287,8 +315,22 @@ footer
 	top:50px;
 	left:17%;
 	display: flex;	
+	align-content: center;
+	flex-direction: column
+}
+.mymenu_3{
+	all: unset;
+	width:81%;
+	height:800px;
+	padding-top:150px;
+	position:absolute;
+	top:50px;
+	left:17%;
+	display: flex;	
 	flex-wrap: wrap;
+	align-content: center;
 	align-content: flex-start
+
 }
 .mymenu_2 h
 {
@@ -368,7 +410,7 @@ td{
 }
 .btn_group:hover{
 	color:white;
-	background-color: skyblue;
+	background-color: #9f8bb6;
 }       
             
             

@@ -37,8 +37,8 @@
         <div id="popular_movie" class="con1" >           
             <div id="popular_movie2" class="con2">
                 <div class="tool">
-                    <p style="margin-left: 30px;"><영화></p>
-                    <label><input type ="button" id = "1" class="m_btn" onclick="golist(this.id)">더보기</label>
+                    <p style="margin-left: 30px;">영화</p>
+                    <label><input type ="button" id = "1" class="m_btn" onclick="golist(this.id)"><b><더보기></b></label>
                 </div>
              
             </div>
@@ -56,10 +56,9 @@
         <div id="upcoming_list" class="con1">  
             <div id="upcoming_list2" class="con2">
                 <div class="tool">
-                    <p style="margin-left: 30px;"><개봉 예정작></p>
-                    <label><input type ="button" id = "2" class="m_btn" onclick="golist(this.id)">더보기</label>
-                </div>
-                
+                    <p style="margin-left: 30px;">개봉 예정작</p>
+                    <label><input type ="button" id = "2" class="m_btn" onclick="golist(this.id)"><b><더보기></b></label>
+                </div> 
             </div>
         </div>
         <!-- 상영예정영화 컨텐츠 창 끝 -->
@@ -68,8 +67,8 @@
         <div id="nowplay_list" class="con1">
             <div id="nowplay_list2" class="con2">
                 <div class="tool">
-                    <p style="margin-left: 30px;"><현재 상영작 ></p>
-                    <label><input type ="button" id = "3" class="m_btn" onclick="golist(this.id)">더보기</label>
+                    <p style="margin-left: 30px;">현재 상영작 </p>
+                    <label><input type ="button" id = "3" class="m_btn" onclick="golist(this.id)"><b><더보기></b></label>
                 </div>
             </div>
         </div>
@@ -79,20 +78,16 @@
         <div id="top_list" class="con1">
             <div id="top_list2" class="con2">
                 <div class="tool">
-                    <p style="margin-left: 30px;"><높은 평점영화></p>
-                    <label><input type ="button" id = "4" class="m_btn" onclick="golist(this.id)">더보기</label>
-                </div>
-                
+                    <p style="margin-left: 30px;">높은 평점영화</p>
+                    <label><input type ="button" id = "4" class="m_btn" onclick="golist(this.id)"><b><더보기></b></label>
+                </div> 
             </div>
         </div>
         <!-- 높은 평점 영화 컨텐츠 창 끝 -->
 
-        <!-- footer -->
-      
+        <!-- footer -->     
         <footer>
-
         </footer>
-
     </div>
     <!-- 메인페이지 끝 -->
 <script>
@@ -132,58 +127,59 @@
 		let i=0;
 		 movies.forEach((movie) => {
 			 const movieEl = document.createElement("div");
-		        movieEl.classList.add("r_m");
+		        movieEl.classList.add("m_c2");
 		       	if(word == 1)
 		       	{
 		       		i++;
-			       	if(i>5)
+			       	if(i>4)
 			       	{
 			       		return false;
 			       	}
 			        tmp =  IMGPATH +movie.poster_path;
 			        title = movie.title;
 			        id=movie.id
-			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <h3>"+title+"</h3>";
+			        overview = movie.overview;
+			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <div class = 'm_c2_title'> <h3>"+title+"</h3></div> <div class='overview'><h4>"+title+"</h4>"+overview+"</div>";
 			         $('#popular_movie2').append(movieEl);
 		       	}
 		       	else if(word ==2)
 		       	{
 		       		i++;
-			       	if(i>10)
+			       	if(i>8)
 			       	{
 			       		return false;
 			       	}
 			        tmp =  IMGPATH +movie.poster_path;
 			        title = movie.title;
 			        id=movie.id
-			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <h3>"+title+"</h3>";
-			         $('#upcoming_list2').append(movieEl);
+			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <div class = 'm_c2_title'> <h3>"+title+"</h3></div> <div class='overview'><h4>"+title+"</h4>"+overview+"</div>";
+			        $('#upcoming_list2').append(movieEl);
 		       	}
 		       	else if(word==3)
 		       	{
 		       		i++;
-			       	if(i>10)
+			       	if(i>8)
 			       	{
 			       		return false;
 			       	}
 			        tmp =  IMGPATH +movie.poster_path;
 			        title = movie.title;
 			        id=movie.id
-			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <h3>"+title+"</h3>";
-			         $('#nowplay_list2').append(movieEl);
+			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <div class = 'm_c2_title'> <h3>"+title+"</h3></div> <div class='overview'><h4>"+title+"</h4>"+overview+"</div>";
+			        $('#nowplay_list2').append(movieEl);
 		       	}
 		       	else if(word==4)
 		       	{
 		       		i++;
-			       	if(i>10)
+			       	if(i>8)
 			       	{
 			       		return false;
 			       	}
 			        tmp =  IMGPATH +movie.poster_path;
 			        title = movie.title;
 			        id=movie.id
-			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <h3>"+title+"</h3>";
-			         $('#top_list2').append(movieEl);
+			        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <div class = 'm_c2_title'> <h3>"+title+"</h3></div> <div class='overview'><h4>"+title+"</h4>"+overview+"</div>";
+			        $('#top_list2').append(movieEl);
 		       	} 	
 		    });	
 	}

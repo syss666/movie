@@ -19,7 +19,7 @@
         
 	</div>
 	<style>
-		.mymenu{
+		/* .mymenu{
         		width:15%;
         		height:800px;
         		margin:0px;
@@ -30,7 +30,7 @@
         		display: inline-block;
         		top:50px;
         		
-        	}
+        	} */
 	</style>
 	<div>
 	<div>

@@ -59,7 +59,7 @@
 				<li class="c_1"><a href="#" id="mypage"><%=id +"님"%></a>
                 	<ul class="c_2">
                 		<li><a href="/movie/mypage/mydata.jsp" >개인 정보 수정</a></li>
-                		<li><a href="/moviefav_list.do" >찜목록</a></li>
+                		<li><a href="/moviefav_list.do" >관심 목록</a></li>
                 		<li><a href="/movie/mypage/report_errors.jsp" >버그 및 오류 신고</a></li>
                 		<li><a href="/movie/mypage/delete_account.jsp" >회원 탈퇴</a></li>
                 	</ul>

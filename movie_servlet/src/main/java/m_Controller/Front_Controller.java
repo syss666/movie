@@ -18,6 +18,7 @@ import m_Controller.sub.idcheck;
 import m_Controller.sub.insert;
 import m_Controller.sub.login;
 import m_Controller.sub.logout;
+import m_Controller.sub.paging;
 import m_Controller.sub.search;
 import m_Controller.sub.update;
 
@@ -48,6 +49,9 @@ public class Front_Controller extends HttpServlet{
 		list.put("/moviefav_check.do", new fav_check());
 		list.put("/moviefav_delete.do", new fav_delete());
 		list.put("/moviefav_list.do", new fav_list());
+		//----------------------------------------
+		//페이징 관련 함수
+		list.put("/movietotal.do", new paging());
 	}
 	
 	
