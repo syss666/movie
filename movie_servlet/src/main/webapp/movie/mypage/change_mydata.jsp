@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/movie/css/common.js"></script>
 </head>
 <%@include file="/movie/link.jsp" %> 
 <body>
@@ -54,12 +55,13 @@
 				</table>
 			</form>
 			
+			<!-- footer -->     
+		    <jsp:include page="/movie/footer.jsp" />
+		    <!-- footer --> 
 		</div>
 	</div>
-        
-        
-        
-        
+
+     
 	</div>
 
 </body>

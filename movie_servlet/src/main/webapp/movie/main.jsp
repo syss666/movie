@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
  <%@include file="/movie/link.jsp" %> 
 <body>
@@ -25,13 +26,18 @@
 	 	<%} %> 
         <!-- 로고랑 topmenu 끝 -->
         
+        <!-- 사이드바 -->
+		<jsp:include page="/movie/sidebar.jsp" />
+		<!-- 사이드바 -->
+        
 		<form name = "m_fo" action="/movie/item.jsp" method="get">
-			<input type = "hidden" id= "m" name = "m_id" value= " ">
+			<input type = "hidden" id= "m3" name = "m_id" value= " ">
 		</form>
 		
 		<form name = "more" action="/movie/content.jsp" method="get">
 			<input type = "hidden" id= "list1" name = "list2" value= "">
 		</form>
+		
 		
         <!-- 영화 추천 창 시작 -->
         <div id="popular_movie" class="con1" >           
@@ -85,10 +91,12 @@
         </div>
         <!-- 높은 평점 영화 컨텐츠 창 끝 -->
 
-        <!-- footer -->     
-        <footer>
-        </footer>
+        
+       
     </div>
+    <!-- footer -->     
+        <jsp:include page="/movie/footer.jsp" />
+        <!-- footer -->  
     <!-- 메인페이지 끝 -->
 <script>
 	const IMGPATH = 'https://image.tmdb.org/t/p/w185';
@@ -183,10 +191,11 @@
 		       	} 	
 		    });	
 	}
-	$(document).on('click', '.r_m', function(){
+	$(document).on('click', '.m_c2', function(){
 		const m_id = $(this).children().attr('alt');
+		
 		var form = document.m_fo;
-		document.getElementById("m").value = m_id;
+		document.getElementById("m3").value = m_id;
 		form.submit();
 	})
 	function golist(list_id)
@@ -214,6 +223,6 @@
 		}
 	}
 </script> 
-    
+
 </body>
 </html>

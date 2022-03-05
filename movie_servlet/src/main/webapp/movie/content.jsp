@@ -5,6 +5,7 @@
 <head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -35,7 +36,7 @@
         	<input type="hidden" id="l" name = "list2" value="">
          	<input type="hidden" id="p" name="num" value="">
         	<input type="hidden" id= "b" name = "block_page" value= "">
-    		<input type="hidden" id= "t" name = "total_pages" value= "">
+    		<input type="hidden" id= "t2" name = "total_pages" value= "">
     	</form>
 		<%
 			String list3 = (String)request.getParameter("list2");
@@ -68,10 +69,14 @@
 			}
 			
 		%>
+		<!-- 사이드바 -->
+		<jsp:include page="/movie/sidebar.jsp" />
+		<!-- 사이드바 -->
+		
         <div id="t_movie" class="title">
        
             <div class="movie">
-                <div style="width: 100%;"> <h2 style="width: 100%; margin-left:10%; margin-bottom: 30px;" ><%=list3 %></h2></div>
+                <div style="width: 100%;"> <h1 style="width: 100%; margin-left:10%; margin-bottom: 30px;" ><%=list3 %></h1></div>
                 
             	<!-- m_c2 -->
             	<!-- 영화 사진 크기 -->
@@ -97,7 +102,7 @@
 	<!-- item.jsp로 값넘기기 위한 폼 -->
 	
 		<form name = "m_fo" action="/movie/item.jsp" method="get">
-			<input type = "hidden" id= "m" name = "m_id" value= " ">
+			<input type = "hidden" id= "m1" name = "m_id" value= " ">
 		</form>
 		
 <script>
@@ -141,9 +146,10 @@
 		    dataType: "json" ,
 			success:function(m_data) 
 			{	
-				let total_page=m_data.total_pages;
-				document.getElementById("t").value = total_page;
+				let total_pages=m_data.total_pages;
+				document.getElementById("t2").value = total_pages;
 				console.log(m_data);
+				console.log(total_pages);
 				eachmovie(m_data.results);		
 			}
 		});
@@ -156,15 +162,16 @@
 		       	console.log(movie.indexof);
 		        tmp =  IMGPATH +movie.poster_path;
 		        title = movie.title;
+		        overview = movie.overview;
 		        id=movie.id
-		        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <h3>"+title+"</h3>";		      
+		        movieEl.innerHTML =  "<img src="+tmp+"  alt="+id+"> <h3>"+title+"</h3><div class='overview'><h4>"+title+"</h4>"+overview+"</div>";		      
 		         $('.movie').append(movieEl);
 		    });	
 	}	
 	$(document).on('click', '.m_c2', function(){
 		const m_id = $(this).children().attr('alt');
 		var form = document.m_fo;
-		document.getElementById("m").value = m_id;
+		document.getElementById("m1").value = m_id;
 		form.submit();
 	})
 	function paging(num)
@@ -179,7 +186,7 @@
 	function move_block(b_num)
 	{
 		var form = document.p_form;
-		let maxpage=document.getElementById("t").value 
+		let maxpage=document.getElementById("t2").value 
 		console.log(maxpage);
 		if(b_num>-1 && b_num<maxpage)
 		{
@@ -192,11 +199,9 @@
 	}
 </script>
         <!-- 영화 컨텐츠 창 끝 -->
-        <!-- footer -->
-        <footer >
-
-        </footer>
-        <!-- footer end -->
-    </div>
+        <!-- footer -->     
+        <jsp:include page="/movie/footer.jsp" />
+        <!-- footer -->  
+</div>
 </body>
 </html>

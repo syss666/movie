@@ -37,7 +37,6 @@ div
     width: 100%;
     height: 100%;
     position: relative;
-    /* border: 1px solid black; */
     display: block;
     margin:80px 0 0 0;
     
@@ -46,7 +45,6 @@ div
 {
     width: 100%;
     height:50px;
-    /* border:1px solid black; */
     display: flex;
     background-color: rgb(158, 158, 196);
     position:fixed;
@@ -67,7 +65,7 @@ div
 {
     margin: 0px auto;
     display: block;
-    width: 90%; 
+    width: 85%; 
     height: auto;
     position: relative; 
     margin-bottom:30px; 
@@ -142,13 +140,13 @@ footer
 .title{
     width: 85%;
     height: auto;
-    margin: 40px auto;
+    margin: 0px auto;
     display: block;
 }
 .movie{
     width: 80%;
     height: auto;
-    margin: 110px auto;
+    margin: 0px auto;
     margin-bottom:20px;
     flex-wrap: wrap;
     align-items:center; justify-content:center;
@@ -305,12 +303,17 @@ footer
 	position: fixed;
 	display: inline-block;
 	top:50px;
+	list-style:none;
+    padding-left:30px;
+	font-size : 20px;
 }
+
+
 .mymenu_2{
 	all: unset;
 	width:81%;
 	height:800px;
-	padding-top:150px;
+	padding-top:50px;
 	position:absolute;
 	top:50px;
 	left:17%;
@@ -318,13 +321,14 @@ footer
 	align-content: center;
 	flex-direction: column
 }
+
 .mymenu_3{
 	all: unset;
 	width:81%;
 	height:800px;
-	padding-top:150px;
+	
 	position:absolute;
-	top:50px;
+	top:0px;
 	left:17%;
 	display: flex;	
 	flex-wrap: wrap;
@@ -346,6 +350,8 @@ td{
 } 
 .change_table{
 	margin : 30px auto;
+	margin-bottom: 500px;
+
 }
 .change_table tr td , .change{
 	width: 300px;
@@ -356,9 +362,7 @@ td{
 	width:100px;
 	height: 38px;
 }
-.change_table{
-	margin : 30px auto;
-}
+
 .change_table tr td , .change{
 	width: 300px;
 	height: 30px;
@@ -412,7 +416,6 @@ td{
 	color:white;
 	background-color: #9f8bb6;
 }       
-            
             
             
             

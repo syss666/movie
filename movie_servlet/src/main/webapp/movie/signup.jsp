@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
  <%@include file="/movie/link.jsp" %>
+
 </head>
 
 <body>
@@ -76,21 +77,9 @@
 
         </script>
         
-        
-        
-        
-        <!-- 로그인 화면 끝 -->
-        <!-- footer -->
-        <footer >
-
-        </footer>
-        <!-- footer end -->
-        <!-- 회원가입 화면 끝 -->
-        <!-- footer -->
-        <footer >
-
-        </footer>
-        <!-- footer end -->
+        <!-- footer -->     
+        <jsp:include page="/movie/footer.jsp" />
+        <!-- footer -->  
 
 
 

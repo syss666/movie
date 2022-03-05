@@ -12,10 +12,14 @@ public class paging implements Controller{
 	@Override
 	public void Execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		String total_pages = (String)req.getParameter("total");
-		System.out.println("total값은 : " +total_pages );
-		System.out.println("pagingjava접근");
-		req.setAttribute("total_pages", total_pages);
+		
+		
+		/*
+		 * String total_pages = (String)req.getParameter("total");
+		 * System.out.println("total값은 : " +total_pages );
+		 * System.out.println("pagingjava접근"); req.setAttribute("total_pages",
+		 * total_pages);
+		 */
 		
 		/*
 		 * try { resp.getWriter().print(total);

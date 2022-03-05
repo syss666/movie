@@ -24,6 +24,7 @@ public class update implements Controller {
 		movieVO vo = new movieVO(id,pw,name,email,phone);
 		
 		service.update(vo);
+		
 		HttpSession session = req.getSession();
 		session.setAttribute("vo",vo);
 		HttpUtil.Forward(req,resp,"/movie/mypage/mydata.jsp");

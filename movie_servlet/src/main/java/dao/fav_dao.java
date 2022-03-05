@@ -58,14 +58,10 @@ public class fav_dao {
 			if(result!=0) {
 				flag=true;
 			}
-			
-			
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
-			
-			
 		}
 		finally
 		{
@@ -73,7 +69,6 @@ public class fav_dao {
 			try {pstmt.close();}catch(Exception e) {}
 			try {conn.close();}catch(Exception e) {}
 		}
-		
 		
 		return flag;
 	}
@@ -132,9 +127,11 @@ public class fav_dao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs=null;
+		
 		System.out.println("dao_getTotalCount 진입");
 		int cnt=0;
 		try {
+			
 			conn=ds.getConnection();
 			pstmt=conn.prepareStatement("select count(*) from fav_tbl where user_id = ?");
 			pstmt.setString(1,user_id);
@@ -142,19 +139,23 @@ public class fav_dao {
 			
 			if(rs!=null) {
 				while(rs.next()) {
+					System.out.println("rs값은 "+rs.getInt(1));
 					cnt=rs.getInt(1);
 				}	
-			}	
-			
-		}catch(Exception e) {
+			}
+			System.out.println("cnt값은 "+cnt);
+		}
+		catch(Exception e) {
 			e.printStackTrace();
-		}finally {
+		}
+		finally {
 			try{rs.close();}catch(Exception e) {}
 			try{pstmt.close();}catch(Exception e) {}
 			try{conn.close();}catch(Exception e) {}	
 		}
 		return cnt;
 	}
+	
 	public Vector<favVO> getlist(int start, int end, String user_id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

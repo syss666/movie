@@ -9,6 +9,7 @@
  <%@include file="/movie/link.jsp" %>
  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <body>
 <style>
 
@@ -23,8 +24,9 @@
 	background-color: rgb(158, 158, 196);
 }
 .m_data1{
-	width: 100%;
+	width: 1600px;
 	height: 800px;
+	margin : 0px auto;
 	margin-bottom: 10px;
 	padding: 40px;
 
@@ -54,6 +56,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	margin-left:100px;
 	
 }
 .m_title{
@@ -85,15 +88,14 @@
 .fav_btn
 {
 	margin-left: 150px;
-
-	
 }
-.fav_btn img
+#fav_img
 {
 	width:30px;
 	height: 30px;
 }
 </style>
+
 <div class="mainview">
 	<!-- 로고랑 topmenu 시작 -->   
         <%
@@ -145,6 +147,7 @@
 			</div>
 		</div>
 		<!-- 영화 트레일러 공간 -->
+		
 		<h1 style="margin-left:100px; margin-bottom : 50px;">예고편</h1>		
 			<p align="middle"><iframe id="t_iframe" style="width: 1300px; height: 700px;"></iframe></p>
 		
@@ -154,14 +157,12 @@
         	<input type="hidden" id="m_t" name = "m_title" value="">
          	<input type="hidden" id="m_p" name="m_poster" value="">
 		</form>
-		
+	
 	</div>
       
-      <!-- footer -->
-<footer >
-
-</footer>
-<!-- footer end -->
+      <!-- footer -->     
+      <jsp:include page="/movie/footer.jsp" />
+      <!-- footer -->  
 
 </div>
     
@@ -172,7 +173,7 @@
 	const trailer_url = "/videos?api_key=d33ccc9950f589a6d0b4d5c2f8f63e31&language=ko"
 	/* 영화의 id값인 m_id*/
 	var m_id = "<%=m_id%>"; 
-	
+	console.log(m_id);
 	
 	s_id(m_id);
 	showtrailer(m_id);
@@ -210,7 +211,7 @@
 				const result = s_data.movie_results[0];
 				const title = result.title;
 				sessionStorage.setItem('title', title);
-				
+				const video=result.video;
 				const overview =result.overview;
 				const release_date = result.release_date;
 				const rated= result.vote_average;
@@ -218,7 +219,7 @@
 
 				tmp =  IMGPATH +result.poster_path;
 				sessionStorage.setItem('poster', tmp)
-				m_poster.innerHTML = "<img src="+tmp+" alt='test'>";
+				m_poster.innerHTML = "<img src="+tmp+" alt='이미지가 없습니다.'>";
 				
 				const m_title = document.createElement("div");
 				m_title.innerHTML = "<h1>"+title+"</h1>"
@@ -246,6 +247,7 @@
 	function showtrailer(id)
 	{	
 		url = id_url+id+trailer_url;
+		
 		$.ajax({
 		    url: url, 
 		    type: "GET",                             
@@ -253,12 +255,10 @@
 			success:function(t_data) 
 			{
 				const trailer_data = t_data.results;
-				console.log(trailer_data);
 				const len=trailer_data.length-1;
 				const key = trailer_data[len].key;
 				const trailerurl ="https://www.youtube.com/embed/"+key+"?autoplay=1"
-				
-				$('#t_iframe').attr('src', trailerurl);
+				$('#t_iframe').attr('src', trailerurl);				
 			}
 		});
 	}

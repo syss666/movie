@@ -17,16 +17,19 @@
         </div>
         <!-- 로고랑 topmenu 끝 -->
         
-<div>
+	
 		<jsp:include page="/movie/mypage/my_sidebar.jsp" />
-<%@page import="vo.*" %>
-<%
-	movieVO vo= (movieVO)session.getAttribute("vo");
-%>
+		<%@page import="vo.*" %>
+		<%
+			movieVO vo= (movieVO)session.getAttribute("vo");
+		%>
 		<div class="mymenu_2">
 			<h1 style="text-align: center;">나의 개인 정보 </h1>
 			<table class = "change_table">
-				
+				<tr>	
+					<td>I	D</td>
+					<td><%=vo.getId() %></td>
+				</tr>
 				<tr>	
 					<td>이   름</td>
 					<td><%=vo.getName() %></td>
@@ -41,16 +44,14 @@
 				</tr>
 				<tr>
 					<td style="text-align: center;" colspan="2"><input class = "c_btn" type="button" value="개인 정보 변경하기"  onClick="location.href='/movie/mypage/change_mydata.jsp'"></td>
-					
 				</tr>
 			</table>
-
+		
+			<!-- footer -->     
+		    <jsp:include page="/movie/footer.jsp" />
+		    <!-- footer -->
 		</div>
-	</div>
-        
-        
-        
-        
+		
 	</div>
 
 </body>

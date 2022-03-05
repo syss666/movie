@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
  <%@include file="/movie/link.jsp" %>
 <body>
@@ -34,19 +35,10 @@
             <h4>혹시 회원이 아니신가요? <br> <a href="/movie/signup.jsp">이곳</a>을 눌러 회원가입을 해주세요</h4>
         </form>   
         
-        
-        
-        
-        
-        
-        
-        
         <!-- 로그인 화면 끝 -->
-        <!-- footer -->
-        <footer >
-
-        </footer>
-        <!-- footer end -->
+        <!-- footer -->     
+        <jsp:include page="/movie/footer.jsp" />
+        <!-- footer -->  
     </div>
 </body>
 </html>

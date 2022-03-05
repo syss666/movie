@@ -11,15 +11,23 @@
 </head>
 <body>
 <style>
+/* sidebar */
 #sidebar{
-	all: inherit;	
-	width: 300px;
-	height: 800px;
+	
+	width: 250px;
+	height: 500px;
 	background-color: gray;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
 	padding:50px 10px;
+	position:fixed;
+	margin:0;
+	margin-left: 10px;
+	border-radius :0 1em 1em 0 ;
+	z-index: 10;
+	background-color: rgb(158, 158, 196);
+	
 }
 .genchk{
 	margin: 0px;
@@ -30,6 +38,15 @@ form label {
 	display : inline-block;
 	width:100px; line-height:30px;
 }
+
+.side_btn{
+	border-radius :1em 1em 1em 1em ;
+	background-color: #9f8bb6;
+	border: 1px solid gray; 
+
+	color: black; 
+	padding: 5px;
+}    
 </style>
 <%
 	if(request.getParameter("genre")!=null)
@@ -39,7 +56,7 @@ form label {
 	}
 %>
 <div id ="sidebar">
-<form name = "gen_form" method="get" action="/movie/genre.jsp" >
+<form name = "gen_form" method="get" action="javascript:check()" >
 	<label><input class = "genchk" type="checkbox" name="genre" value="28">액션</label>
     <label><input class = "genchk" type="checkbox" name="genre" value="12">모험</label>
     <label><input class = "genchk" type="checkbox" name="genre" value="16">애니메이션</label>
@@ -59,13 +76,57 @@ form label {
     <label><input class = "genchk" type="checkbox" name="genre" value="53">스릴러</label>
     <label><input class = "genchk" type="checkbox" name="genre" value="10752">전쟁</label>
     <label><input class = "genchk" type="checkbox" name="genre" value="37">서부</label>
-    <br>
-    <input type="submit" value="Submit"> 
-    <input type="reset" value="Reset">
+ 
+    <div style="margin-top:10px;">
+    	<input class="side_btn" type="submit" value="Submit"> 
+    	<input class="side_btn" type="reset" value="Reset">
+    </div>
+  
 </form>
-
 </div>
 
+<form name = "g_form" action="/movie/genre.jsp" method="get">
+	<input type = "hidden" id= "t11" name = "total_pages" value= "">
+	<input type = "hidden" id= "g" name = "gen_list" value= "">
+</form>
+<script>
+
+function check()
+{
+   var gen_list = '';
+   
+    $('input[class="genchk"]:checked').each(function (index) {
+       if (index != 0) {
+    	   gen_list += ', ';
+       }
+       gen_list += $(this).val();
+    });
+    console.log(gen_list);
+    total_page2(gen_list);
+}
+
+
+function total_page2(gen_list)
+{
+	const GENREURL="https://api.themoviedb.org/3/discover/movie?api_key=d33ccc9950f589a6d0b4d5c2f8f63e31&language=ko&sort_by=popularity.desc&with_genres=";
+	const url = GENREURL+gen_list;
+	console.log(url);
+	$.ajax({
+	    url: url, 
+	    type: "GET",                             
+	    dataType: "json" ,
+		success:function(m_data) 
+		{
+			var form = document.g_form;
+			let total_pages=m_data.total_pages;
+			document.getElementById("t11").value=total_pages;
+		    document.getElementById("g").value=gen_list;
+			form.submit();
+
+		}
+	});
+}
+</script>
 
 </body>
 </html>

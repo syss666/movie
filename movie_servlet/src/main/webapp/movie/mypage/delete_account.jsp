@@ -18,20 +18,7 @@
         <!-- 로고랑 topmenu 끝 -->
         
 	</div>
-	<style>
-		/* .mymenu{
-        		width:15%;
-        		height:800px;
-        		margin:0px;
-        		padding-top:50px;
-        		padding-left : 20px;
-        		background-color: rgb(185, 185, 224);
-        		position: fixed;
-        		display: inline-block;
-        		top:50px;
-        		
-        	} */
-	</style>
+	
 	<div>
 	<div>
 		<jsp:include page="/movie/mypage/my_sidebar.jsp" />
@@ -46,7 +33,7 @@
 		</style>
 		<div class="mymenu_2" style =" text-align: center;">
 			<h1>회원 탈퇴</h1>
-			<form class = "d_form" method="post" action="/movieDelete.do">
+			<form class = "d_form" method="post" action="/movieDelete.do" style="margin-bottom:500px;">
 				<h2 style="margin-bottom:20px;">회원 탈퇴 하시겠습니까</h2>
 				<p> 
 					탈퇴를 하신다면 제공하신 정보는 삭제 됩니다. <br> 탈퇴를 원하신다면 아래 탈퇴 동의 후 탈퇴하기를 눌러주십시오.
@@ -54,7 +41,23 @@
 				<label><input id="ch" type="checkbox" name="chk" value="yes" >회원 탈퇴 동의</label><br><br>
 				<button id= "d_btn" style="width:300px; height: 50px;" disabled>탈퇴하기</button>
 			</form>
+			<!-- footer -->     
+    		<jsp:include page="/movie/footer.jsp" />
+    		<!-- footer -->
 		</div>
+		<style>
+		#d_btn{
+			border: 1px solid gray; 
+			background-color: rgba(0,0,0,0); 
+			color: black; 
+			padding: 5px;
+			border-radius :1em 1em 1em 1em ;
+		}
+		#d_btn:hover{
+			color:white;
+			background-color: #9f8bb6;
+		}
+		</style>
 		<script>
 		$(document).ready(function(){
 			$("#ch").on('click', function() { 
@@ -72,8 +75,7 @@
 		</script>
 		
 	</div>
-	계정삭제
-
+	  
 
 
 </body>

@@ -17,23 +17,8 @@
 		<jsp:include page="/movie/topmenu_login.jsp" />
         </div>
         <!-- 로고랑 topmenu 끝 -->
-        
-        
-        
 	</div>
-<!-- 	<style>
-		.mymenu{
-       		width:15%;
-       		height:auto;
-       		margin:0px;
-       		padding-top:50px;
-       		padding-left : 20px;
-       		background-color: rgb(185, 185, 224);
-       		position: fixed;
-       		display: inline-block;
-       		top:50px;
-       	}
-	</style> -->
+
 	<%@page import="java.util.*,vo.*" %>
 	<%
 		int start=0;
@@ -48,17 +33,17 @@
 		
 
 	%>
-	<div>
+
 		<form name = "m_fo" action="/movie/item.jsp" method="get">
-			<input type = "hidden" id= "m" name = "m_id" value= " ">
+			<input type = "hidden" id= "f_m" name = "m_id" value= "">
 		</form>
 		<jsp:include page="/movie/mypage/my_sidebar.jsp" />
 		<div class="mymenu_3" style="padding-top: 50px; padding-left: 30px;">
-			<div style = "width: 100%; height:50px;">
-				<h2 style = "height:50px;">관심 목록</h2>
+			<div style = "width: 100%; height:50px;margin-bottom:30px;">
+				<h2 style = "height:50px; ">관심 목록</h2>
 			</div>
+			<div style="padding-top: 50px; padding-left: 30px; margin-bottom:400px;">
 			<%
-			
 			try{
 				for(int i=0; i<list.size();i++){
 					%>
@@ -70,16 +55,20 @@
 			}
 			catch(Exception e){}
 			%>
+			</div>
+			<!-- footer -->     
+	    	<jsp:include page="/movie/footer.jsp" />
+	    	<!-- footer -->  
 		</div>
-	</div>
+
 <script>
 $(document).on('click', '.m_c2', function(){
 	const m_id = $(this).children().attr('alt');
 	var form = document.m_fo;
-	document.getElementById("m").value = m_id;
+	document.getElementById("f_m").value = m_id;
 	form.submit();
 })
 </script>
-
+	
 </body>
 </html>
