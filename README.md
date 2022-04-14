@@ -23,21 +23,31 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
 
 * 계정
   - 회원가입(비밀번호 2차 확인)
+  2차 비밀번호랑 비밀번호가 같아야 회원가입이 진행됩니다.
   ![signup](https://user-images.githubusercontent.com/69191696/163355840-e978a829-e83d-4953-b7e4-144a4e53ff1f.JPG)
 
   - 로그인 및 로그아웃
   ![login](https://user-images.githubusercontent.com/69191696/163355993-5edcf09e-9b8a-4028-971f-c2910938b6a2.JPG)
+  로그인 시 위의 topmenu가 유저이름과 로그아웃 버튼 으로 변경됩니다.
   ![topmenu](https://user-images.githubusercontent.com/69191696/163356186-c7819378-fb1a-470e-848c-c998df70d688.JPG)
   ![topmenu_login](https://user-images.githubusercontent.com/69191696/163356203-ccfee50b-6c82-49ff-b50b-f6d510598722.JPG)
-  -마이페이지
   
-  - 회원정보 수정
+  - 회원정보 수정(topmenu에 유저 아이디 부분 클릭하면 메뉴 출력)
   ![mydata](https://user-images.githubusercontent.com/69191696/163356083-cd70568a-98ef-44b6-99eb-05248c629b0b.JPG)
   - 회원 삭제
   ![delete](https://user-images.githubusercontent.com/69191696/163356599-e760dffa-ef4a-4ea5-94c2-b53491a641ce.JPG)
+  
   - 관심 영화 등록
+  <br>
+  영화 포스터를 클릭하게 되면 아래 그림처럼 영화 정보가 나오게 되는데 평가 점수 옆에 있는 관심 버튼을 클릭하면 관심 목록에 추가됩니다.
   ![item](https://user-images.githubusercontent.com/69191696/163356644-a5f7f1b6-02c4-45a3-b4af-9bb4b35d7713.JPG)
+  
+  추가된 영화 는 아래 그리멏럼 체크표시 모양이 바뀌게 됩니다.
+  
   ![itemfav](https://user-images.githubusercontent.com/69191696/163356648-4a6c8c91-b607-422f-b257-ba2765c69d31.JPG)
+  
+  관심 목록은 아이디를 클릭하면 관심목록에서 확인 할 수 있습니다.
+  
   ![myfav](https://user-images.githubusercontent.com/69191696/163358219-ad0f16be-70a5-4589-91c0-db5c23d8db32.JPG)
 
 * 영화 정보
