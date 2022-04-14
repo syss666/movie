@@ -51,25 +51,25 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   - 장르별 영화 검색하기
   <br>
   장르별 영화 검색은 왼쪽에 있는 사이드 바에 있는 원하는 장르를 체크하여 검색하면 해당 장르의 영화만 보여줍니다.
-  ![sidebar](https://user-images.githubusercontent.com/69191696/163357678-5f326fef-eb2e-4a1d-816b-c56fd21679a1.JPG)
-  ![genre](https://user-images.githubusercontent.com/69191696/163357823-345ee88e-53bb-4629-9246-2586d5248cf7.JPG)
+![sidebar](https://user-images.githubusercontent.com/69191696/163357678-5f326fef-eb2e-4a1d-816b-c56fd21679a1.JPG)
+![genre](https://user-images.githubusercontent.com/69191696/163357823-345ee88e-53bb-4629-9246-2586d5248cf7.JPG)
   
   - 이름으로 영화 검색하기 
   <br>
   탑메뉴에 있는 검색창에 찾고 싶은 영화 명을 검색하면 아래 그림과 같이 검색한 내용을 보여줍니다.
   (스파이더맨 검색한 화면)
-  ![searchpage](https://user-images.githubusercontent.com/69191696/163358104-d4a3b02d-aa93-46ec-b8f1-adf333e9566a.JPG)
+![searchpage](https://user-images.githubusercontent.com/69191696/163358104-d4a3b02d-aa93-46ec-b8f1-adf333e9566a.JPG)
   - 모든 화면에 해당 되는 페이지 수만큼 페이징 처리
-  ![page](https://user-images.githubusercontent.com/69191696/163358376-75b9dadd-9cbf-4252-90de-b4003ce743fb.JPG)
+![page](https://user-images.githubusercontent.com/69191696/163358376-75b9dadd-9cbf-4252-90de-b4003ce743fb.JPG)
   
   - 영화 정보
   <br>
   원하는 영화 포스터에 마우스를 올리면 아래 사진처럼 짧은 줄거리가 표시됩니다.
-  ![main movie](https://user-images.githubusercontent.com/69191696/163358543-f1dd98ae-524f-4260-88f0-425060206f21.JPG)
+![main movie](https://user-images.githubusercontent.com/69191696/163358543-f1dd98ae-524f-4260-88f0-425060206f21.JPG)
   영화를 클릭할 경우 영화 포스터와, 개봉일자, 평점, 줄거리 등이 표시됩니다.
-  ![item](https://user-images.githubusercontent.com/69191696/163356644-a5f7f1b6-02c4-45a3-b4af-9bb4b35d7713.JPG)
+![item](https://user-images.githubusercontent.com/69191696/163356644-a5f7f1b6-02c4-45a3-b4af-9bb4b35d7713.JPG)
   해당영화 예고편이 있다면 아래부분에 예고편을 볼 수 있습니다.
-  ![trailer](https://user-images.githubusercontent.com/69191696/163358750-b1e8a746-28ea-4c74-a204-1e9f73d0732b.JPG)1
+![trailer](https://user-images.githubusercontent.com/69191696/163358750-b1e8a746-28ea-4c74-a204-1e9f73d0732b.JPG)1
   
   
   
