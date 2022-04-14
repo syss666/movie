@@ -28,6 +28,8 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
 
   - 로그인 및 로그아웃
   ![login](https://user-images.githubusercontent.com/69191696/163355993-5edcf09e-9b8a-4028-971f-c2910938b6a2.JPG)
+  
+  
   로그인 시 위의 topmenu가 유저이름과 로그아웃 버튼 으로 변경됩니다.
   ![topmenu](https://user-images.githubusercontent.com/69191696/163356186-c7819378-fb1a-470e-848c-c998df70d688.JPG)
   ![topmenu_login](https://user-images.githubusercontent.com/69191696/163356203-ccfee50b-6c82-49ff-b50b-f6d510598722.JPG)
@@ -38,7 +40,7 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   ![delete](https://user-images.githubusercontent.com/69191696/163356599-e760dffa-ef4a-4ea5-94c2-b53491a641ce.JPG)
   
   - 관심 영화 등록
-  <br>
+  
   영화 포스터를 클릭하게 되면 아래 그림처럼 영화 정보가 나오게 되는데 평가 점수 옆에 있는 관심 버튼을 클릭하면 관심 목록에 추가됩니다.
   
   ![item](https://user-images.githubusercontent.com/69191696/163356644-a5f7f1b6-02c4-45a3-b4af-9bb4b35d7713.JPG)
