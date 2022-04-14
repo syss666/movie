@@ -23,10 +23,12 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
 
 * 계정
   - 회원가입
+  ![signup](https://user-images.githubusercontent.com/69191696/163355840-e978a829-e83d-4953-b7e4-144a4e53ff1f.JPG)
+
   - 로그인(비밀번호 2차 확인)
   - 회원정보 수정(마이페이지에서 수정가능)
   - 로그아웃
   - 회원 삭제
   - 관심 영화 등록
-![mypagemeue](https://user-images.githubusercontent.com/69191696/163355235-48ce5d27-cbbe-4721-96dd-61470441ecad.JPG)
+
 
