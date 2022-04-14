@@ -45,12 +45,14 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   <br>
   메인화면은 현재 상영중인 영화와 개봉예정작 영화 평점 높은 영화가 8개씩 표시 됩니다. <br>
   개봉예정작의 더보기 버튼을 누르면 개봉예정작 영화만 보여주게 됩니다.
+  
   ![mainpage](https://user-images.githubusercontent.com/69191696/163356963-4980a2cf-e061-4b17-90e1-9ad2588fbc00.JPG)
   ![itemfav](https://user-images.githubusercontent.com/69191696/163357000-52d6a394-1348-4c25-b92a-e5dc637dfc35.JPG)
 
   - 장르별 영화 검색하기
   <br>
   장르별 영화 검색은 왼쪽에 있는 사이드 바에 있는 원하는 장르를 체크하여 검색하면 해당 장르의 영화만 보여줍니다.
+  
   ![sidebar](https://user-images.githubusercontent.com/69191696/163357678-5f326fef-eb2e-4a1d-816b-c56fd21679a1.JPG)
   ![genre](https://user-images.githubusercontent.com/69191696/163357823-345ee88e-53bb-4629-9246-2586d5248cf7.JPG)
   
