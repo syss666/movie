@@ -22,13 +22,21 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
 <h2>구현 기능</h2>
 
 * 계정
-  - 회원가입
+  - 회원가입(비밀번호 2차 확인)
   ![signup](https://user-images.githubusercontent.com/69191696/163355840-e978a829-e83d-4953-b7e4-144a4e53ff1f.JPG)
 
-  - 로그인(비밀번호 2차 확인)
-  - 회원정보 수정(마이페이지에서 수정가능)
-  - 로그아웃
+  - 로그인 및 로그아웃
+  ![login](https://user-images.githubusercontent.com/69191696/163355993-5edcf09e-9b8a-4028-971f-c2910938b6a2.JPG)
+  ![topmenu](https://user-images.githubusercontent.com/69191696/163356186-c7819378-fb1a-470e-848c-c998df70d688.JPG)
+  ![topmenu_login](https://user-images.githubusercontent.com/69191696/163356203-ccfee50b-6c82-49ff-b50b-f6d510598722.JPG)
+  -마이페이지
+  
+  - 회원정보 수정
+  ![mydata](https://user-images.githubusercontent.com/69191696/163356083-cd70568a-98ef-44b6-99eb-05248c629b0b.JPG)
   - 회원 삭제
+  ![delete](https://user-images.githubusercontent.com/69191696/163356599-e760dffa-ef4a-4ea5-94c2-b53491a641ce.JPG)
   - 관심 영화 등록
+  ![item](https://user-images.githubusercontent.com/69191696/163356644-a5f7f1b6-02c4-45a3-b4af-9bb4b35d7713.JPG)
+  ![itemfav](https://user-images.githubusercontent.com/69191696/163356648-4a6c8c91-b607-422f-b257-ba2765c69d31.JPG)
 
 
