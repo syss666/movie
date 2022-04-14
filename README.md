@@ -29,3 +29,4 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   - 회원 삭제
   - 관심 영화 등록
 * 정보
+ https://user-images.githubusercontent.com/69191696/163355038-148233d9-622f-4fe0-bc94-d318de7c0cb7.JPG
