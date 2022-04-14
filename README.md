@@ -38,6 +38,7 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   ![mydata](https://user-images.githubusercontent.com/69191696/163356083-cd70568a-98ef-44b6-99eb-05248c629b0b.JPG)
   - 회원 삭제
   ![delete](https://user-images.githubusercontent.com/69191696/163356599-e760dffa-ef4a-4ea5-94c2-b53491a641ce.JPG)
+  <br>
   
   - 관심 영화 등록
   
@@ -52,7 +53,7 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   관심 목록은 아이디를 클릭하면 관심목록에서 확인 할 수 있습니다.
   
   ![myfav](https://user-images.githubusercontent.com/69191696/163358219-ad0f16be-70a5-4589-91c0-db5c23d8db32.JPG)
-
+<br>
 * 영화 정보
   - 현재 상영중 영화, 개봉예정작 , 평점 높은 영화
   <br>
@@ -61,14 +62,14 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   
   ![mainpage](https://user-images.githubusercontent.com/69191696/163356963-4980a2cf-e061-4b17-90e1-9ad2588fbc00.JPG)
   ![itemfav](https://user-images.githubusercontent.com/69191696/163357000-52d6a394-1348-4c25-b92a-e5dc637dfc35.JPG)
-
+<br>
   - 장르별 영화 검색하기
   <br>
   장르별 영화 검색은 왼쪽에 있는 사이드 바에 있는 원하는 장르를 체크하여 검색하면 해당 장르의 영화만 보여줍니다.
   
   ![sidebar](https://user-images.githubusercontent.com/69191696/163357678-5f326fef-eb2e-4a1d-816b-c56fd21679a1.JPG)
   ![genre](https://user-images.githubusercontent.com/69191696/163357823-345ee88e-53bb-4629-9246-2586d5248cf7.JPG)
-  
+  <br>
   - 이름으로 영화 검색하기 
   <br>
   탑메뉴에 있는 검색창에 찾고 싶은 영화 명을 검색하면 아래 그림과 같이 검색한 내용을 보여줍니다.
@@ -78,7 +79,7 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   - 모든 화면에 해당 되는 페이지 수만큼 페이징 처리(페이지 수는 최대 10개이며 그 이하면 그이하만큼만 표시)
   
 ![page](https://user-images.githubusercontent.com/69191696/163358376-75b9dadd-9cbf-4252-90de-b4003ce743fb.JPG)
-  
+  <br>
   - 영화 정보
   <br>
   원하는 영화 포스터에 마우스를 올리면 아래 사진처럼 짧은 줄거리가 표시됩니다.
