@@ -61,7 +61,7 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   개봉예정작의 더보기 버튼을 누르면 개봉예정작 영화만 보여주게 됩니다.
   
   ![mainpage](https://user-images.githubusercontent.com/69191696/163356963-4980a2cf-e061-4b17-90e1-9ad2588fbc00.JPG)
-  ![itemfav](https://user-images.githubusercontent.com/69191696/163357000-52d6a394-1348-4c25-b92a-e5dc637dfc35.JPG)
+![main_toprated](https://user-images.githubusercontent.com/69191696/163361426-78419dff-4bbd-42f6-8f3f-2ecf24aaca95.JPG)
 <br>
   - 장르별 영화 검색하기
   <br>
