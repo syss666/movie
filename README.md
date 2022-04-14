@@ -6,3 +6,17 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
 <br>
 <h2>개발 환경</h2>
 <li>eclipse</li>
+<li>Apache Tomcat9</li>
+
+<br>
+<h2>사용 언어 및 기술</h2>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>JAVA</li>
+<li>MYsql</li>
+<li>JSP</li>
+<li>Servlet</li>
+
+<br>
+<h2>구현 기능</h2>
