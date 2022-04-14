@@ -67,10 +67,15 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   - 영화 정보
   <br>
   원하는 영화 포스터에 마우스를 올리면 아래 사진처럼 짧은 줄거리가 표시됩니다.
+  
 ![main movie](https://user-images.githubusercontent.com/69191696/163358543-f1dd98ae-524f-4260-88f0-425060206f21.JPG)
+
   영화를 클릭할 경우 영화 포스터와, 개봉일자, 평점, 줄거리 등이 표시됩니다.
+  
 ![item](https://user-images.githubusercontent.com/69191696/163356644-a5f7f1b6-02c4-45a3-b4af-9bb4b35d7713.JPG)
+
   해당영화 예고편이 있다면 아래부분에 예고편을 볼 수 있습니다.
+  
 ![trailer](https://user-images.githubusercontent.com/69191696/163358750-b1e8a746-28ea-4c74-a204-1e9f73d0732b.JPG)1
   
   
