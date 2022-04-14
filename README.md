@@ -39,4 +39,6 @@ TMDB의 API를 이용하여 영화 정보를 보여주는 웹페이지 입니다
   ![item](https://user-images.githubusercontent.com/69191696/163356644-a5f7f1b6-02c4-45a3-b4af-9bb4b35d7713.JPG)
   ![itemfav](https://user-images.githubusercontent.com/69191696/163356648-4a6c8c91-b607-422f-b257-ba2765c69d31.JPG)
 
+* 영화 정보
+  - 현재 상영중 영화, 개봉예정작 , 평점 높은 영화
 
